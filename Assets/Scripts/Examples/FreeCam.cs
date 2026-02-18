@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FreeCam : MonoBehaviour
+public partial class FreeCam : MonoBehaviour
 {
     public float mouseSensitivity = 0.02f;
 
