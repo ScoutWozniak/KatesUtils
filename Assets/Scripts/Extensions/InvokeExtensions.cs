@@ -1,16 +1,17 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
-public class InvokeExtensions : MonoBehaviour
+public static class Extensions
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public static void Invoke(this MonoBehaviour mb, Action f, float delay)
     {
-        
+        mb.StartCoroutine(InvokeRoutine(f, delay));
     }
 
-    // Update is called once per frame
-    void Update()
+    private static IEnumerator InvokeRoutine(Action f, float delay)
     {
-        
+        yield return new WaitForSeconds(delay);
+        f();
     }
 }
