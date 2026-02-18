@@ -6,6 +6,9 @@ using UnityEngine;
 
 namespace Utils
 {
+	/// <summary>
+	/// Math functions for easing
+	/// </summary>
     public static class Easing
     {
        public static float Linear(float t) => t;
