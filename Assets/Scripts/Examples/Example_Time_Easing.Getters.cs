@@ -10,6 +10,5 @@ public partial class Example_Time_Easing
     private float OutValue => Easing.GetValue(_easingType, EasingMode.Out, Percentage);
     
     private float InOutValue => Easing.GetValue(_easingType, EasingMode.InOut, Percentage);
-    
-    
+
 }

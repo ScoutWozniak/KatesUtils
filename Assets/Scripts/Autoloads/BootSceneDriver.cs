@@ -26,6 +26,13 @@ public class EditorInit
 
 public class AutoloadManager : MonoBehaviour
 {
+    private static AutoloadManager _instance;
+
+    void Awake()
+    {
+        _instance = this;
+    }
+    
     void Start()
     {
         Debug.Log("Finding all autoloads");
@@ -41,6 +48,18 @@ public class AutoloadManager : MonoBehaviour
 
             }
         }
+    }
+
+    public static bool TryGetAutoload<T>(out  T autoload) where T : MonoBehaviour
+    {
+        if (!_instance)
+        {
+            autoload = null;
+            return false;
+        }
+        
+        autoload = _instance.GetComponentInChildren<T>();
+        return autoload;
     }
     
     static IEnumerable<Type> GetAllAutoloads(Assembly assembly) {

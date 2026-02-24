@@ -6,9 +6,11 @@ namespace Examples.Systems
     [Autoload("Test")]
     public class TestAutoload : MonoBehaviour
     {
-        void FixedUpdate()
+        void Start()
         {
-            
+            Debug.Log("Auto loaded!");
         }
+        
+        
     }
 }
